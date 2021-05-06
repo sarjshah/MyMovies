@@ -26,11 +26,6 @@ class MovieListAdapter() : RecyclerView.Adapter<MovieListAdapter.MovieViewHolder
 
     override fun getItemCount() = results.size
 
-    fun filterList(filteredActorList: MutableList<Movie>) {
-        results = filteredActorList
-        notifyDataSetChanged()
-    }
-
     class MovieViewHolder(var movieItemBinding: ItemMovieBinding) :
         RecyclerView.ViewHolder(movieItemBinding.root) {
 
