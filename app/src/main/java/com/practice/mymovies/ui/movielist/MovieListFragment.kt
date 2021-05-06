@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.practice.mymovies.R
 import com.practice.mymovies.databinding.FragmentMovieListBinding
 import com.practice.mymovies.model.Movie
@@ -84,7 +84,7 @@ class MovieListFragment : Fragment() {
         binding.recyclerView.apply {
             movieListAdapter = MovieListAdapter()
             adapter = movieListAdapter
-            layoutManager = LinearLayoutManager(activity)
+            layoutManager = GridLayoutManager(context, 3)
         }
     }
 }

@@ -8,8 +8,8 @@ import com.practice.mymovies.R
 
 @BindingAdapter("imageUrl")
 fun ImageView.url(imageUrl: String) {
-    val requestOptions = RequestOptions().placeholder(R.drawable.ic_launcher_foreground)
-        .error(R.drawable.ic_launcher_background)
+    val requestOptions = RequestOptions().placeholder(R.drawable.ic_baseline_image_search_24)
+        .error(R.drawable.ic_no_image)
 
     Glide.with(this)
         .applyDefaultRequestOptions(requestOptions)
