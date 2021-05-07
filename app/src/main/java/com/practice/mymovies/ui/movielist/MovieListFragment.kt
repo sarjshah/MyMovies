@@ -15,7 +15,9 @@ import com.practice.mymovies.databinding.FragmentMovieListBinding
 import com.practice.mymovies.model.Movie
 import com.practice.mymovies.ui.adapter.MovieListAdapter
 import com.practice.mymovies.util.LoadingState
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MovieListFragment : Fragment() {
 
     private lateinit var binding: FragmentMovieListBinding

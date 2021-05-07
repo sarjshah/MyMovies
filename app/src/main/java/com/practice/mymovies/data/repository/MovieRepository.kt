@@ -1,10 +1,11 @@
 package com.practice.mymovies.data.repository
 
-import com.practice.mymovies.data.network.MovieRetrofitFactory
+import com.practice.mymovies.data.network.MovieServiceAPI
 import com.practice.mymovies.data.network.response.Data
 import com.practice.mymovies.data.network.response.MovieResponse
 import com.practice.mymovies.model.Movie
 import com.practice.mymovies.util.toMovie
+import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -12,10 +13,12 @@ interface MovieRepository {
     suspend fun fetchMovies(): List<Movie>
 }
 
-class MovieRepositoryImpl : MovieRepository {
+class MovieRepositoryImpl @Inject constructor(
+    private val service: MovieServiceAPI
+) : MovieRepository {
     override suspend fun fetchMovies(): List<Movie> =
         withContext(Dispatchers.IO) {
-            MovieRetrofitFactory.service.getMovies().toMovie()
+            service.getMovies().toMovie()
         }
 
     fun getData() = MovieResponse(
